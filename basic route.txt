@@ -1,0 +1,15 @@
+routing = it is a process to set up your application url ( browser url)
+
+Directory = routes/web.php contains all routing files
+
+customize url :
+
+	Route::get('/home', function (){   // function () declared a call by function
+    	return "Hello world";
+	});
+
+root url:
+	
+	Route::get('/', function () {
+    	return view('welcome');
+	});
