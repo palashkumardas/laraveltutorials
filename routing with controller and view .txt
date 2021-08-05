@@ -1,0 +1,27 @@
+	 view ->connect with controller and routing controller
+
+	1. routing with controller:
+	 	
+		Route::get('/','democontroller@Home');
+
+		Route::get('/about','democontroller@About');
+
+		Route::get('/contact','democontroller@Contact');
+
+	2. view connected with controller:
+
+		function Home(){
+        	return view('home');
+   		}
+
+    		function About(){
+        	return view('about');
+    		}
+
+    		function Contact(){
+       		return view('contact');
+    		}		
+	3. create view (resources/routes)	
+		home.blade.php
+		about.blade.php
+		contact.blade.php
