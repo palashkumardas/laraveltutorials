@@ -1,0 +1,30 @@
+
+ 1. make controller : democontroller
+
+	 php artisan make:Controller democontrolle
+
+ 2. now create method into it (democontroller)
+	
+	
+    function Home(){
+        return "i am Home method";
+    }
+
+    function About(){
+        return "i am About method";
+    }
+
+    function Contact(){
+        return "i am Contact method";
+    }
+
+ 3. now routing controller(web.php)
+
+ Route::get('/','democontroller@Home');
+
+ Route::get('/about','democontroller@About');
+
+ Route::get('/contact','democontroller@Contact');
+
+
+	
