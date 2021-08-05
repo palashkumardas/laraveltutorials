@@ -1,0 +1,29 @@
+to return view = i have to create a view .
+
+
+first return laravel default view (welcome)
+
+
+Route::get('/', function () {
+    return view('welcome');
+});
+
+
+Now i have create a new view and routing it.
+ 
+
+resources/views/home.blade.php // blade.php extension 
+
+
+routing :
+
+	Route::get('/', function () {  // home is root url
+    	return view('home');  // only file name 
+	});
+
+now i have create about.blade.php 
+
+routing :
+	Route::get('/about', function () {
+    	return view('about');
+	});
