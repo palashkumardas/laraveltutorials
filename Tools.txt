@@ -1,0 +1,18 @@
+	Tools
+
+----------------------------
+1. Composer(php pakage manager)
+
+2' Xampp (Apache server)
+
+3. Visual studio  code (text editor-any one)
+
+
+	setup squence 
+-----------------------------
+
+1. xampp install (first setup)
+
+2. composer install ( second setup )
+
+3. texteditor install (last setup )
