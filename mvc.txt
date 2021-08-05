@@ -1,0 +1,17 @@
+		mvc (software development method)
+
+--------------------------------------------------------------------------
+
+	Three part of a application 
+
+1. model = data structure.
+2. view = visible part.
+3. controller = logics part.
+
+
+
+data insert chart: view -> controller -> model -> database 
+
+data select chart : view <- controller <- model <- database
+
+
