@@ -1,0 +1,17 @@
+laravel routing with href link : <a href="{{url('/')}}">Home</a>
+
+
+now i am declare it in my home view page.
+
+	<a href="{{url('/')}}">Home</a><br>
+	<a href="{{url('about')}}">About</a><br>
+	<a href="{{url('contact')}}">Contact</a>
+
+routing (web.php):
+	 
+	Route::get('/','democontroller@Home');
+
+	Route::get('/about','democontroller@About');
+
+	Route::get('/contact','democontroller@Contact');
+
