@@ -1,0 +1,21 @@
+
+
+
+routin with parameter(single parameter)
+
+
+routing : Route::get('/url path {property name}','controllername@method name');
+
+
+i have used :(web.php)
+
+		Route::get('/home/{name}','SiteController@Myname');
+
+ 
+and method into (SiteController.php):
+
+	
+    function Myname($name){
+        return $name;
+    }
+
