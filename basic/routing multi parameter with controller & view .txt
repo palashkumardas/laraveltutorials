@@ -1,0 +1,19 @@
+routing:
+	Route::get('/home/{firstname}/{middlename}/{lastname}','SiteController@Myname');
+
+
+controller: 
+
+	function Myname($firstname,$middlename,$lastname){
+	
+	// here i use associate array to show value into view.
+
+        return view('demoview',['firstkey'=>$firstname,'middlekey'=>$middlename,'lastkey'=>$lastname]);
+   	}
+
+view :
+	// here key is assigned as a variable
+	
+	<h1>first name:{{$firstkey}}</h1> 
+	<h1>middle name:{{$middlekey}}</h1>
+	<h1>last name:{{$lastkey}}</h1>
