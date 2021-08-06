@@ -1,0 +1,9 @@
+routing: 
+	
+	Route::get('/home/{firstname}/{middlename}/{lastname}','SiteController@Myname');
+
+method into controller:
+	
+	function Myname($firstname,$middlename,$lastname){
+        return "first name:".$firstname. "<br>middle name:".$middlename. "<br>last name:".$lastname;
+    	}
