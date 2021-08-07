@@ -1,0 +1,20 @@
+            custome controller
+    -----------------------------------
+php artisan make:Controller MyController
+
+method:
+    class MyController extends Controller
+{
+    public function Myself(){
+        return "i love programming";
+    }
+
+    public function Herself(){
+        return "she loves programming";
+    }
+}
+
+
+routing:
+    Route::get('/','MyController@Myself');
+    Route::get('/herself','MyController@Herself');
