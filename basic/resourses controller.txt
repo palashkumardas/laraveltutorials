@@ -1,0 +1,13 @@
+                     resourses controller 
+        ---------------- ---------------------------
+ it is used crud operation by http request handle
+ by default method lists:
+            index()
+            create()
+            store(Request$request)
+            show($id)
+            edit($id)
+            update(Request$request,$id)
+            destroy($id)
+
+routing: Route::resourse('url','controllername');
