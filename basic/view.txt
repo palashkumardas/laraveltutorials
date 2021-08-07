@@ -1,0 +1,18 @@
+laravel view(user interface)
+-----------------------------------
+.php extension view  ---- .blade.php view
+----------------------------------------------
+normal php view         -   laravel template engine
+no special syntax        -   special syntax
+all php application     -   only laravel
+conventional            - advance
+-----------------------------------
+i will show blade view topics
+    template inheritance
+    components & slots
+    displaying data
+    blade & javascript framework
+    forms
+    including sub-views
+    service injection
+    extending blade
