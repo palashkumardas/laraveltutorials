@@ -1,0 +1,26 @@
+ sigle action controller: only use for one action
+
+ i have created a controller:
+    
+    class Mycontroller extends Controller
+    {
+        //
+    }
+
+now i will make it single action controller
+
+     class Mycontroller extends Controller
+    {
+        //single action controller
+
+         public function __invoke()
+    {
+        // return string 
+        return "i am single action controller";
+
+    }
+        
+    }
+
+now routing :
+            Route::get('/','Mycontroller');
