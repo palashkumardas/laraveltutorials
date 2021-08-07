@@ -1,0 +1,27 @@
+routing group benefits : provide common features to all 
+			use common path prefix
+			use common middleware
+
+
+
+syntax : Route::group([],callback);
+
+ i have a simple example:
+
+    	Route::group(['prefix'=>'account'],function(){
+
+    Route::get('/profile',function(){
+        return "this is profile";
+    });
+    Route::get('/register',function(){
+        return "this is register";
+    });
+    Route::get('/signin',function(){
+        return "this is signin";
+    });
+    Route::get('/signout',function(){
+        return "this is signout";
+    });
+    
+
+	});
