@@ -1,0 +1,25 @@
+if else condition inside blade view
+----------------------------------
+@if ()
+    
+@elseif ()
+
+@else
+
+@endif
+
+controller page:
+    public function MyHome(){
+        // assign a variable
+        //$data= array("america","bangladesh","canada","denmark","england");
+        $login = true;
+        return view('home',['loginkey'=>$login]);
+    }
+blade view page:
+    @if ($loginkey==true)
+        <h1>you are login in</h1>
+    @elseif ($loginkey==false)
+        <h1>you are not login in</h1>
+    @else
+        <h1>you are login status empty</h1>
+    @endif
