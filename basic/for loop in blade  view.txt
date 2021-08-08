@@ -1,0 +1,17 @@
+for loop in side blade view
+---------------------------
+syntax :
+    @for(condition)
+     // code execute
+    @endfor
+blade.view :
+now i show 100 button 
+-------------------------
+    @for ($i=0;$i<100;$i++)
+    <button>Save</button>
+    @endfor
+show data 
+------------------
+    @for ($i=0;$i<100;$i++)
+    <button>{{$i}}</button>
+    @endfor
