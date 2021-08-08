@@ -1,0 +1,35 @@
+two statement for show data into blade view:
+
+
+{{ php code here }}
+----------------------
+filter by htmlspecialchars function
+prevent cross site scripting attacks
+
+{!! php code here !!}
+----------------------
+avoid filter by htmlspecialchars function
+no prevent cross site scripting attacks
+
+controller page :
+     public function MyHome(){
+        // assign a variable
+
+        $name = "<h1>My name is palash</h1>";
+        return view('home',['namekey'=>$name]);
+    }
+    or
+    public function MyHome(){
+        // assign a variable
+
+        $name = "<script>alert('Hi! i am palash')</script>";
+        return view('home',['namekey'=>$name]);
+    }
+routing page:
+    Route::get('/','HomeController@MyHome');
+blade view page:
+
+{{ $namekey }} // here key assign as a variable
+<br>
+{!! $namekey!!}
+
