@@ -1,0 +1,21 @@
+foreach loop into blade view
+------------------------------
+syntax:
+    @foreach ($collection as $item)
+    // code execute 
+    @endforeach
+i make a drop down using foreach loop
+
+controller page :
+        public function MyHome(){
+        // assign a variable
+        $data= array("america","bangladesh","canada","denmark","england");
+
+        return view('home',['datakey'=>$data]);
+    }
+blade view page:
+    <select>
+@foreach ($datakey as $countryname)
+   <option > {{$countryname}}</option>
+@endforeach
+</select>
