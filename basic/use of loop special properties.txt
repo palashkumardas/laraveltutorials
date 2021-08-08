@@ -1,0 +1,40 @@
+controller page :
+    public function MyHome(){
+        // assign a variable
+        $data= array("america","bangladesh","canada","denmark","england");
+        return view('home',['datakey'=>$data]);
+    }
+blade view:
+// show index
+    @foreach ($datakey as $name)
+    {{$loop->index}}
+@endforeach
+
+// show count
+    @foreach ($datakey as $name)
+    {{$loop->count}}
+    @break
+@endforeach
+// show first 
+    @foreach ($datakey as $name)
+    @if ($loop->first)
+        {{ $name }}
+        @break
+    @endif
+@endforeach
+// show last
+    @foreach ($datakey as $name)
+    @if ($loop->last)
+        {{ $name }}
+        @break
+    @endif
+@endforeach
+// show even 
+    @foreach ($datakey as $name)
+    @if ($loop->even)
+        {{ $name }}
+        @continue
+    @endif
+@endforeach
+// show odd
+    

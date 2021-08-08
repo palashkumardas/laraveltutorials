@@ -1,0 +1,22 @@
+php code inside blade view
+---------------------------
+syntax:
+@php
+
+@endphp
+
+blade view :
+    @php
+    echo "hello world";
+    @endphp
+
+// add two value:
+   @php
+
+    $first = 10;
+    $second = 5;
+    $result = $first + $second;
+    echo "Total sum is:".$result;
+
+@endphp
+
