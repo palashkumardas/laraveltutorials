@@ -1,0 +1,33 @@
+forelse loop into blade view
+--------------------------
+it is almost same as foreach loop, just a extra option is empty
+syntax:
+    @forelse ($collection as $item)
+    
+    @empty
+    
+    @endforelse
+
+controller page:
+     public function MyHome(){
+        // assign a variable
+        $data= array("america","bangladesh","canada","denmark","england");
+
+        return view('home',['datakey'=>$data]);
+    }
+blade view page:
+    
+    @forelse ($datakey as $countryname)
+        <li>{{ $countryname}}</li>
+    @empty
+        <p>no country name</p>
+    @endforelse
+
+now no data into array then show empty:
+     public function MyHome(){
+        // assign a variable
+        $data= array();
+
+        return view('home',['datakey'=>$data]);
+    }
+    output : no country name
