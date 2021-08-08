@@ -1,0 +1,10 @@
+step: for that first make a forder inside views
+step: create file under forder
+    such as 
+    header.blade.php
+    body.blade.php
+    footer.blade.php
+step:design these pages
+
+step : include these pages
+    syntax : @include('fordername.filename')
