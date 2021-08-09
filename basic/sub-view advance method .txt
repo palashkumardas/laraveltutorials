@@ -1,0 +1,20 @@
+sub-view advance method list
+-------------------------------------
+1. @include('view.name',['some', => 'data'])
+// show error massage if something goes error
+2. @includeIf('view.name',['some' => 'data'])
+// donot show any error massage if something goes error
+3. @includeFirst(['custom.admin','admin'],['some' => 'data'])
+// indicate first view 
+ such as : @includefirst(['subview.body','subview.header','subview.footer'])
+
+4. @includeWhen($boolean,'view.name',['some' => 'data'])
+// if boolean is true then show output
+such as : @includeWhen(true,'subview.header')
+          @includeWhen(false,'subview.header')
+
+5. @includeUnless($boolean,'view.name',['some' => 'data'])
+// if boolean is true then it is not work
+such as: @includeUnless(true, 'subview.header')
+         @includeUnless(false, 'subview.header')
+--------------------------------------------

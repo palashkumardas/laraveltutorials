@@ -1,0 +1,7 @@
+use associate array to pass and show data inside @inside
+-----------------------------------------------
+@include
+--------------
+@include('subview.footer',['textkey'=>'all right reserved by us'])
+---------------------------
+<footer style="width: 100%; height:50px; background-color:red;">{{ $textkey }}</footer>
