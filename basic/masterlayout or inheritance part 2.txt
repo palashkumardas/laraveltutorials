@@ -1,0 +1,15 @@
+master layout :
+ 1. @yield('key') 
+ // to catch data from @section(). 
+ // it is use inside masterlayout
+
+ 2. @section('key','data')
+ // to send data into masterlayout
+ // it is uses in child layout
+ 
+ example :(home.blade.php)
+          @section('titlekey','palash')
+
+masterlayout.blade.php:
+        <title>@yield('titlekey')</title>
+
