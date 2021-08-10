@@ -1,0 +1,15 @@
+first : download bootstrap 
+second: place css and js file into resources/css,js,view
+        css files : bootstrap.min.css
+                    custom.css // for customize bootstrap css
+        js files: bootstrap.min.js
+                  jquery.min.js
+                  popper.min.js
+                  custom.js // for customize js file
+        views file :
+        home.blade.php
+        about.blade.php
+        portfolio.blade.php
+        service.blade.php
+        layout/app.blade.php,footer.blade.php,menu.blade.php
+        

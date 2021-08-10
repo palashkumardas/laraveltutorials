@@ -1,0 +1,4 @@
+first: inheritance master layout inside all views files
+       @extends('foldername.filename')
+second: add title using @section('key','name')
+third:hit browser and check

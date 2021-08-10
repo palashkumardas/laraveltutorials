@@ -1,0 +1,5 @@
+first : make a controller name SiteController
+second : make method for each views page into SiteController
+third : return view inside method
+four : making route using get method for each views
+five : test url 

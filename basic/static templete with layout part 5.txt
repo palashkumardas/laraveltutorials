@@ -1,0 +1,9 @@
+first : create a bootstrap nav
+second : download a logo 
+third : add logo inside navbar 
+four: custom css for navbar-brand 
+
+five : hit broswer
+six : routing inside menu 
+       using {{url('')}} 
+seven:hit broswer to check

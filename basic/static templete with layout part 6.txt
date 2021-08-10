@@ -1,0 +1,6 @@
+first : design footer inside footer.blade.php
+second:hit browser to check 
+
+third : design all views container 
+       such as here i use lorem
+four : hit browser to check

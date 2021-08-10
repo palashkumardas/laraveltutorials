@@ -1,0 +1,9 @@
+first : enter master layout 
+    layout/app.blade.php
+second : place all folders into public excape views
+
+third : link all files inside app.blade.php (using asset method)
+        asset method syntax:{{asset('foldername/filename')}}
+four: @include() uses for include all blade views inside body
+five: @yield('name') // for receive data
+
