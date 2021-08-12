@@ -1,0 +1,7 @@
+first : install dependency for modify table column
+        composer require doctrine/dbal
+second: make a new migration file 
+third : use up function inside it use table method 
+four: use change method 
+such as :
+five: run php artisan migrate

@@ -1,0 +1,22 @@
+first: create database 
+    here i have create database name as laravel
+second:connection database (.env / .env example)
+
+third:make a migration called students
+
+    syntax : php artisan make:Migration MigrationFileName
+
+four:run command
+five:such as a table: 
+public function up (){
+    Schema::create('students',function (Blueprint $table){
+            $table->bigIncrements('id');
+            $table->string('name');
+            $table->string('roll');
+            $table->string('class');
+            $table->timestamps();
+        });
+}
+
+finally: run migrate command 
+        php artisan migrate
