@@ -1,7 +1,19 @@
 first : install dependency for modify table column
-        composer require doctrine/dbal
+        composer require doctrine/dbal:^2.12.1
 second: make a new migration file 
 third : use up function inside it use table method 
 four: use change method 
 such as :
+creating table:
+ Schema::create('users', function(Blueprint $table){
+            $table->bigIncrements('id');
+            $table->string('name',500);
+            $table->string('roll');
+            $table->string('class');
+            $table->timestamps();
+        });
+changing column:
+Schema::table('users', function(Blueprint $table){
+        $table->string('name',1000)->change();
+        });
 five: run php artisan migrate

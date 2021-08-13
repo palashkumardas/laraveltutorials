@@ -1,4 +1,4 @@
  install laravel via composer
  
  
- composer create-project --prefer-dist laravel/laravel:"7.*" blog
+ composer create-project --prefer-dist laravel/laravel:"7.*" app

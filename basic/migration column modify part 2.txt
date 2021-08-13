@@ -1,0 +1,24 @@
+rename column 
+---------------
+ Schema::create('users', function(Blueprint $table){
+            $table->bigIncrements('id');
+            $table->string('name',500);
+            $table->string('roll');
+            $table->string('class');
+            $table->timestamps();
+        });
+renam column:
+    Schema::table('users', function(Blueprint $table){
+            $table->renameColumn('roll','reg');
+        });
+-----------------------------------
+column drop
+--------------------------
+    Schema::table('users', function(Blueprint $table){
+            $table->dropColumn('class');
+        });
+    --------------------------------drop multiple column--------
+    
+        Schema::table('users', function(Blueprint $table){
+            $table->dropColumn(['created_at','updated_at']); // use associate array
+        });
