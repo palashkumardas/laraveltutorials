@@ -1,0 +1,24 @@
+migration roll back
+---------------------------
+php artisan migrate:rollback // last batch no
+php artisan migrate:rollback --step=2 // last two batch no
+php artisan migrate:reset // all batch no
+php artisan migrate:refresh // delete & recreation all batch no
+php artisan migrate:refresh --step=2 // delete and recreation last two batch no
+------------------------------
+roll back with down method
+-------------------------
+i create a table in last batch no 
+  Schema::create('profile', function(Blueprint $table){
+            $table->bigIncrements('id');
+            $table->string('name',500);
+            $table->string('roll');
+            $table->string('class');
+            $table->timestamps();
+        });
+php artisan migrate:rollback
+
+i also drop a table in last batch:
+        Schema::dropIfExists('profile');
+then run rollback command:
+down method is used when we use rollback

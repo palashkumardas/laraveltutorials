@@ -1,2 +1,16 @@
 -------------table rename-------------
-i 
+first: make a new migration 
+second:Schema::rename('users','user_info');
+third: run migrate artisan command
+------------------------------------------
+table drop
+first:make a new migration 
+second: Schema::dropIfExists('students');
+// here i use dropIfExists method 
+
+third: artisan migrate command
+----------------------------------
+migration history batch value
+first: add new migration and run migrate 
+second: goto database and check migration batch info
+---------------------------------------------
