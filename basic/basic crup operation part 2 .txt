@@ -1,0 +1,47 @@
+data insert using axios 
+----------------------------------
+js code:
+         function sendData(){
+   var myname= document.getElementById('myname').value;
+   var myclass= document.getElementById('myclass').value;
+   var myroll= document.getElementById('myroll').value;
+
+   var url="/insertData";
+   var data={name:myname,class:myclass,roll:myroll};
+   axios.post(url,data)
+
+  .then(function (response) {
+    alert(response.data);
+  })
+
+  .catch(function (error) {
+    alert("Error");
+  });
+
+}
+
+method:
+    
+     public function DataInsert(Request $req){
+        $name=$req->input('name');
+        $class=$req->input('class');
+        $roll=$req->input('roll');
+
+        $result=DB::insert('INSERT INTO `students`(`name`, `class`, `roll`) VALUES (?,?,?)',[$name,$class,$roll]);
+
+        if($result==true){
+            return "success";
+        }
+        else{
+            return "fail";
+        }
+
+    }
+view:
+<input type="text"id="myname" placeholder="your name"><br><br>
+<input type="text" id="myclass"placeholder="your class"><br><br>
+<input type="text" id="myroll"placeholder="your roll"><br><br>
+<button onclick="sendData()">Insert</button><br>
+
+<script type="text/javascript" src={{asset('js/axios.min.js')}}></script>
+<script type="text/javascript" src={{asset('js/custom.js')}}></script>

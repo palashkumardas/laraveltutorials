@@ -1,0 +1,31 @@
+fisrt: create a table
+second: make a new controller 
+third: create  method inside controller for crud operation
+four:create views
+five: return DB::select('select * from students'); // show data as json 
+six : convert json data into associative array
+
+select data method
+---------------------------------------------------
+
+ public function DataSelect(){
+       $jasondata= DB::select('select * from students');
+       $jsonstring= json_encode($jasondata);
+       $selectdata= json_decode($jsonstring);
+       return view('index',['selectkey'=>$selectdata]);
+
+index.blade.php:
+
+    <table>
+
+@foreach($selectkey as $item)
+    <tr>
+        <td>{{$item->id}}</td>
+        <td>{{$item->name}}</td>
+        <td>{{$item->class}}</td>
+        <td>{{$item->roll}}</td>
+    </tr>
+@endforeach
+
+</table>
+
