@@ -1,0 +1,25 @@
+-----------laravel query builder--------
+Aggregates
+--------------
+ step :make a controller
+ step: add inside controller
+    use Illuminate\Support\Facades\DB;
+method:
+public function countRow(){
+        $result=DB::table('students')->count();
+        return $result;
+    }
+    public function maximumRow(){
+        $result=DB::table('students')->max('id');
+        return $result;
+    }
+    public function minimumRow(){
+        $result=DB::table('students')->min('id');
+        return $result;
+    }
+    public function averageRow(){
+        $result=DB::table('students')->avg('roll');
+        return "average value is :".$result;
+    }
+routing:
+Route::get('/','AggregatesController@averageRow');

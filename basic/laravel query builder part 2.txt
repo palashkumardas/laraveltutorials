@@ -1,0 +1,30 @@
+-----------laravel query builder--------
+retrieving results
+--------------
+ step :make a controller
+ step: add inside controller
+    use Illuminate\Support\Facades\DB;
+step:
+public function selectAllRows(){
+        $result=DB::table('students')->get();
+        return json_encode($result);
+    }
+    public function selectSingleRow(){
+        $result=DB::table('students')->where('name','=','palash')->first();
+        return json_encode($result);
+    }
+    public function selectFindRow(){
+        $result=DB::table('students')->find(1);
+        return json_encode($result);
+    }
+    public function selectColumn(){
+        $result=DB::table('students')->pluck('name');
+        return json_encode($result);
+    }
+    public function selectSpecificData(){
+        $result=DB::table('students')->where('id','=','1')->value('name');
+        return json_encode($result);
+    }
+
+routing:
+Route::get('/','retievingController@selectSpecificData');
