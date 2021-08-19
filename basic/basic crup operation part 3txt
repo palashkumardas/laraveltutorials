@@ -1,0 +1,47 @@
+data delete using axios 
+-----------------------------------
+method:
+         public function DataDelete(Request $req){
+        $id=$req->input('id');
+        $result=DB::delete('DELETE FROM `students` WHERE `id`=?',[$id]);
+
+        if($result==true){
+            return "delete success";
+        }
+        else{
+            return "delete fail";
+        }
+    }
+js function:
+    function deleteData(){
+
+    var myID= document.getElementById('myID').value;
+
+    var url="/deleteData";
+    var data={id:myID};
+    
+    axios.post(url,data)
+
+   .then(function (response) {
+     alert(response.data);
+   })
+
+   .catch(function (error) {
+     alert("Error");
+   });
+}
+
+routing:
+    
+Route::get('/delete',function(){
+    return view('delete');
+});
+// axios post url
+Route::post('/deleteData','basic_crud_controller@DataDelete');
+view :
+
+<input type="text"id="myID" placeholder="Id no"><br><br>
+<button onclick="deleteData()">Delete</button><br>
+
+<script type="text/javascript" src={{asset('js/axios.min.js')}}></script>
+<script type="text/javascript" src={{asset('js/custom.js')}}></script>

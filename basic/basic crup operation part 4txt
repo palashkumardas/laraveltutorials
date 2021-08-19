@@ -1,0 +1,54 @@
+data update using axios 
+-----------------------------------
+view :
+    <input type="text"id="myid" placeholder="your name"><br><br>
+<input type="text"id="myname" placeholder="your name"><br><br>
+<input type="text" id="myclass"placeholder="your class"><br><br>
+<input type="text" id="myroll"placeholder="your roll"><br><br>
+<button onclick="updateData()">Update</button><br>
+
+<script type="text/javascript" src={{asset('js/axios.min.js')}}></script>
+<script type="text/javascript" src={{asset('js/custom.js')}}></script>
+
+js method:
+    function updateData(){
+
+    var myid= document.getElementById('myid').value;
+    var myname= document.getElementById('myname').value;
+    var myclass= document.getElementById('myclass').value;
+    var myroll= document.getElementById('myroll').value;
+
+    var url="/updateData";
+    var data = {id:myid,name:myname,class:myclass,roll:myroll};
+
+    axios.post(url,data)
+
+    .then(function(response){
+        alert(response.data);
+    })
+    .catch(function(error){
+        alert("Error");
+    });
+}
+routing:
+    Route::get('/update',function(){
+    return view('update');
+});
+Route::post('/updateData','basic_crud_controller@DataUpdate');
+
+method:
+    public function DataUpdate(Request $req){
+       $id= $req->input('id');
+       $name= $req->input('name');
+       $class= $req->input('class');
+       $roll= $req->input('roll');
+
+       $result=DB::update('UPDATE `students` SET `name`=?,`class`=?,`roll`=? WHERE `id`=?', [$name,$class,$roll,$id]);
+
+       if($result==true){
+           return "Update successfully";
+       }
+       else{
+           return "fail";
+       }
+    }
