@@ -1,0 +1,48 @@
+insert(ORM query builder)
+------------------------
+step:make a new controller
+step: use Illuminate\Support\Facades\DB;
+
+method:
+ public function insertData(){
+       $insertdata= DB::table('students')->insert(['name'=>'mukti','class'=>'ten','roll'=>'5']);
+        if($insertdata==true){
+            return "insert success";
+        }
+        else{
+            return "insert fail";
+        }
+    }
+    // insert multiple row
+     public function insertData(){
+       $insertdata= DB::table('students')->insert([
+           ['name'=>'mukti','class'=>'ten','roll'=>'5'],
+           ['name'=>'mukt','class'=>'ten','roll'=>'6'],
+           ['name'=>'muk','class'=>'ten','roll'=>'7']
+        ]);
+        if($insertdata==true){
+            return "insert success";
+        }
+        else{
+            return "insert fail";
+        }
+    }
+    // insert duplicate data (using insertOrIgnore method)
+     public function insertData(){
+       $insertdata= DB::table('students')->insertOrIgnore([
+           ['id'=>'11','name'=>'mukti','class'=>'ten','roll'=>'5'],
+           ['id'=>'21','name'=>'mukt','class'=>'ten','roll'=>'6'],
+           ['id'=>'31','name'=>'muk','class'=>'ten','roll'=>'7']
+        ]);
+        if($insertdata==true){
+            return "insert success";
+        }
+        else{
+            return "insert fail";
+        }
+    }
+
+
+routing:
+Route::get('/','insertController@insertData');
+

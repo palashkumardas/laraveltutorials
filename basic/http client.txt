@@ -1,0 +1,17 @@
+http client: to call third party api/server
+----------------------------------------------
+use Illuminate\Support\Facades\Http;
+
+
+$response= Http::get("");//url
+$response->body();
+$response->json();
+$response->status();
+$response->ok();
+$response->successful();
+$response->serverError();
+$response->clientError();
+$response->header("key");
+$response->headers();
+-------------------------------------
+apishooter.com

@@ -1,0 +1,26 @@
+multiple seeding process
+---------------------------
+step:crate two seeder
+students table seeder
+----------------------------------
+ DB::table('students')->insert([
+                'name'=>'palash',
+                'class'=>'10',
+                'roll'=>'1'
+            ]);
+result table seeder
+--------------------------------------
+ DB::table('result')->insert([
+            'name'=>'palash',
+            'marks'=>'90',
+            'roll'=>'1',
+            'grade'=>'A'
+        ]);
+--------------------------------------
+step: crate a new seeder to connect all seeder file
+$this->call([
+            studentseeder::class,
+            result::class
+        ]);
+
+run this seeder

@@ -1,0 +1,28 @@
+Eloquent ORM
+-----------------
+first: make a model
+properties
+----------(model)
+    protected $table='students';
+    protected $primarykey='id';
+    public $incrementing=true;
+    protected $keyType='int';
+    public $timestamps=false;
+---------------------------------
+controller
+use App\studentsModel;
+
+(method):
+
+        public function demo(){
+        $result=studentsModel::count();
+        return $result;
+    }
+    public function allSelect(){
+        $result=studentsModel::all();
+        return $result;
+    }
+    public function selectcolumn(){
+        $result=studentsModel::pluck('name');
+        return $result;
+    }

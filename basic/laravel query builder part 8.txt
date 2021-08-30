@@ -1,0 +1,18 @@
+Data update
+------------------------
+step:make a new controller
+step: use Illuminate\Support\Facades\DB;
+
+method:
+  public function updateData(){
+       $result=DB::table('students')->where('name','=','palash')->update(['name'=>'Tithi']);
+       if($result==true){
+           return "success";
+       }
+       else{
+           return "fail";
+       }
+   }
+routing:
+Route::get('/','updateController@updatetData');
+

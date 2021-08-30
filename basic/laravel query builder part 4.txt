@@ -1,0 +1,15 @@
+Merge
+------------------------
+step:make a new controller
+step: use Illuminate\Support\Facades\DB;
+
+method:
+
+  public function mergeData(){
+        $students=DB::table('students')->get();
+        $result=DB::table('result')->get();
+        $totalData=$students->merge('$result');
+        return $totalData;
+    }
+Routing:
+    Route::get('/','mergeController@mergeData');

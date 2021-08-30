@@ -1,0 +1,14 @@
+seeding is a process to insert dummy data into a table.
+step : make a seeder
+php artisan make:seeder seederName
+step:
+ public function run()
+    {
+        DB::table('students')->insert([
+                'name'=> Str::random(10),
+                'class'=> Str::random(5),
+                'roll'=> Str::random(2)
+            ]);
+    }
+step:composer dump-autoload
+step:php artisan db:seed--class=studentseeder

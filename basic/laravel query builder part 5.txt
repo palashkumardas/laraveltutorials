@@ -1,0 +1,21 @@
+Left/Right join 
+------------------------
+step:make a new controller
+step: use Illuminate\Support\Facades\DB;
+
+method:
+// leftjoinData
+ public function leftjoinData(){
+       $result= DB::table('students')->leftJoin('result','students.roll','=','result.roll')->get();
+       return $result;
+
+    }
+// Rightjoindata
+ public function rightjoinData(){
+       $result= DB::table('students')->rightJoin('result','students.roll','=','result.roll')->get();
+       return $result;
+
+    }
+routing:
+Route::get('/','joinController@leftjoinData');
+Route::get('/','joinController@rightjoinData');

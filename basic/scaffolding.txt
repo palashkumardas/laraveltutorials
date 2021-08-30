@@ -1,0 +1,7 @@
+laravel scaffolding
+--------------------------------
+fisrt: composer require laravel/ui:"2.5"
+second: php artisan ui bootstrap --auth / php artisan ui bootstrap --auth
+third: install node.js 
+four: npm install
+five: npm run dev

@@ -1,0 +1,17 @@
+model properties
+--------------------------
+data insert:
+  public function insertData(){
+        $result=studentsModel::insert(['name'=>'john','class'=>'11','roll'=>'100']);
+        return $result;
+    }
+data delete:
+public function deleteData(){
+        $result=studentsModel::where('name','=','john')->delete();
+        return $result;
+    }
+data update:
+   public function updateData(){
+        $result=studentsModel::where('name','=','Tithi')->update(['name'=>'Tithi das']);
+        return $result;
+    }

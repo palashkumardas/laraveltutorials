@@ -1,0 +1,34 @@
+Data delete
+------------------------
+step:make a new controller
+step: use Illuminate\Support\Facades\DB;
+
+method:
+ // delete one row
+   public function deleteonerow(){
+       $result= DB::table('students')->where('name','=','mukti')->delete();
+        if($result==true){
+            return "delete success";
+        }else{
+            return "fail";
+        }
+    }
+ // deleteallrow
+ 
+    public function deleteonerow(){
+       $result= DB::table('students')->delete();
+        if($result==true){
+            return "delete success";
+        }else{
+            return "fail";
+        }
+    }
+ // truncate
+ public function deleteonerow(){
+       $result= DB::table('students')->truncate();
+
+    }
+
+routing:
+Route::get('/','deleteController@deletetData');
+

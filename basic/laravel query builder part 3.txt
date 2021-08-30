@@ -1,0 +1,21 @@
+select
+------------------------
+step:make a new controller
+step: use Illuminate\Support\Facades\DB;
+
+method:
+
+ public function uniqeSelect(){
+        $result=DB::table('students')->distinct()->get();
+        return $result;
+    }
+    public function singlecolumnSelect(){
+        $result=DB::table('students')->select('name')->get();
+        return $result;
+    }
+    public function multicolumnSelect(){
+        $result=DB::table('students')->select('name','roll')->get();
+        return $result;
+    }
+routing:
+Route::get('/','selectController@multicolumnSelect');
